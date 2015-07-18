@@ -8,35 +8,38 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 
 public class CodeActivity extends Activity {
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		
+
 		// Layout
 		LinearLayout ll = new LinearLayout(this);
-		ll.setOrientation(LinearLayout.VERTICAL);
-		LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+		ll.setOrientation(LinearLayout.HORIZONTAL);
+		LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT,
+				LayoutParams.MATCH_PARENT);
 		ll.setLayoutParams(params);
-		
-		// 布局参数: match_parent,wrap_content
-		LinearLayout.LayoutParams itemParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
-		
+
 		// editText
 		EditText et = new EditText(this);
-		et.setLayoutParams(itemParams);
-		et.setHint("电话");
-		
+		LinearLayout.LayoutParams et_params = new LinearLayout.LayoutParams(0,
+				LinearLayout.LayoutParams.WRAP_CONTENT, 1);
+		et.setLayoutParams(et_params);
+		et.setText("美女");
+
 		// Button
 		Button btn = new Button(this);
-		btn.setLayoutParams(itemParams);
-		btn.setText("拨打");
-		
+		LinearLayout.LayoutParams btn_params = new LinearLayout.LayoutParams(
+				LinearLayout.LayoutParams.WRAP_CONTENT,
+				LinearLayout.LayoutParams.WRAP_CONTENT);
+		btn.setLayoutParams(btn_params);
+		btn.setText("search");
+
 		// 将子控件加入布局
 		ll.addView(et);
 		ll.addView(btn);
-		
+
 		setContentView(ll);
 	}
 
