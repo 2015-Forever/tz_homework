@@ -26,6 +26,7 @@ public class CodeActivity extends Activity {
 		LinearLayout.LayoutParams et_params = new LinearLayout.LayoutParams(0,
 				LinearLayout.LayoutParams.WRAP_CONTENT, 1);
 		et.setLayoutParams(et_params);
+		et.setSingleLine();	// 限制单行
 		et.setText("美女");
 
 		// Button
